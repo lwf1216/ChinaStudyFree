@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Nunito } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { BottomNav } from "@/components/BottomNav";
@@ -8,13 +7,6 @@ import { DailyRewardWatcher } from "@/components/DailyRewardWatcher";
 import { AchievementWatcher } from "@/components/AchievementWatcher";
 import { LeagueWatcher } from "@/components/LeagueWatcher";
 import ErrorBoundary from "@/components/ErrorBoundary";
-
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
-  variable: "--font-display",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "聪聪学堂",
@@ -98,7 +90,7 @@ const bootScript = `
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN" className={nunito.variable} suppressHydrationWarning>
+    <html lang="zh-CN" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: bootScript }} />
       </head>
