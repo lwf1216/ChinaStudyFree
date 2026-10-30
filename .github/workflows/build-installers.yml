@@ -185,9 +185,10 @@ jobs:
           name: web-out
           path: apps/web/out
       - run: npm ci --ignore-scripts
-      - name: 同步 Web 资源到 iOS 工程
+      - name: 添加并同步 Web 资源到 iOS 工程
         working-directory: apps/mobile
         run: |
+          npx cap add ios || true
           npx cap sync ios
           cd ios/App && pod install --repo-update || true
       - name: 归档（不签名）
