@@ -7,6 +7,7 @@
 
 :root {
   --font-sans: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", ui-sans-serif, system-ui, sans-serif;
+  --font-display: ui-rounded, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
 
   /* 美妆主题色（ThemeProvider 会在 hydrate 后覆盖；这是 SSR 默认值） */
   --theme-primary: #58CC02;
