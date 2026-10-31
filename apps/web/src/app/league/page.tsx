@@ -79,7 +79,7 @@ export default function LeaguePage() {
   const salt = useProgressStore(s => s.leagueSalt);
   const xpHistory = useProgressStore(s => s.xpHistory);
 
-  const unlocked = hydrated && completedCount >= UNLOCK_LESSONS;
+  const unlocked = hydrated; // 【本地修改】联赛直接解锁，无需完成 10 节课
 
   return (
     <AppShell>
