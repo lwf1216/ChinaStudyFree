@@ -1316,12 +1316,8 @@ export const useProgressStore = create<ProgressState>()(
       // --------------------------------------------------------
 
       loseHeart: () => {
-        const { hearts, nextHeartAt } = get();
-        if (hearts <= 0) return;
-        const newHearts = hearts - 1;
-        // 只有原本是满心时才开始充能；否则保留已有 nextHeartAt
-        const newNext = nextHeartAt ?? Date.now() + HEART_RECHARGE_MS;
-        set({ hearts: newHearts, nextHeartAt: newNext });
+        // 【本地修改】去掉红心消耗：答题失败不再扣红心，红心始终满格，学习不再受限
+        return;
       },
 
       refreshHearts: () => {
