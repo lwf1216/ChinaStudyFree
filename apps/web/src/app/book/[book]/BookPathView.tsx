@@ -64,7 +64,8 @@ export function BookPathView({
       statuses[lesson.id] = "current";
       foundCurrent = true;
     } else {
-      statuses[lesson.id] = "locked";
+      // 【本地修改】解锁全部课程：不再顺序锁定，所有未完成课都可直接学习
+      statuses[lesson.id] = "current";
     }
   }
 
@@ -83,7 +84,7 @@ export function BookPathView({
     exams[unit.unit_number] = {
       lessonId: unit.examLessonId,
       questionCount: unit.examQuestionCount,
-      unlocked: allDone,
+      unlocked: true, // 【本地修改】单元挑战直接解锁
       completed: !!examResult,
       conquered: !!examResult && examResult.accuracy >= EXAM_CONQUER_ACCURACY,
     };
