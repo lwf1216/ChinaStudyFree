@@ -740,7 +740,8 @@ export const useProgressStore = create<ProgressState>()(
       reports: [],
 
       leagueUnlocked: () =>
-        Object.keys(get().completedLessons).length >= UNLOCK_LESSONS,
+        // 【本地修改】联赛直接解锁，无需完成课程
+        true,
 
       settleLeagueIfNeeded: () => {
         // salt 一次性生成（首次调用；此后终生稳定，保证联赛确定性）
